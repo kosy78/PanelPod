@@ -1,0 +1,104 @@
+$screen-sm-min: 768px;
+$screen-xs-max: ($screen-sm-min - 1);
+
+$font-stack: "Gotham_light",
+sans-serif;
+$primary-color: #333;
+
+
+
+@font-face {
+    font-family: "Gotham_light";
+    src: url("./assets/fonts/Gotham-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Gotham_book";
+    src: url("./assets/fonts/Gotham-Book.otf") format("opentype");
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+* html .clearfix {
+    zoom: 1;
+}
+
+
+/* IE6 */
+
+*:first-child+html .clearfix {
+    zoom: 1;
+}
+
+
+/* IE7 */
+
+body {
+    font: 100% $font-stack;
+    color: $primary-color;
+    background: -webkit-linear-gradient(top, rgb(111, 202, 251) 0%, rgb(145, 141, 183) 95%, rgb(147, 137, 179) 100%);
+    background: -o-linear-gradient(top, rgb(111, 202, 251) 0%, rgb(145, 141, 183) 95%, rgb(147, 137, 179) 100%);
+    background: -ms-linear-gradient(top, rgb(111, 202, 251) 0%, rgb(145, 141, 183) 95%, rgb(147, 137, 179) 100%);
+    background: -moz-linear-gradient(top, rgb(111, 202, 251) 0%, rgb(145, 141, 183) 95%, rgb(147, 137, 179) 100%);
+    background: linear-gradient(to bottom, rgb(111, 202, 251) 0%, rgb(145, 141, 183) 95%, rgb(147, 137, 179) 100%);
+    margin: 0;
+}
+
+
+.container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1100px;
+    @media (max-width: $screen-xs-max) {
+        width: 100%;
+    }
+}
+
+
+#header {
+    background: white;
+    margin-bottom: 4rem;
+    @extend .clearfix;
+    #brand {
+        float: left;
+        margin-left: 10%;
+        max-width: 211px;
+        margin-top: 10px;
+        img {
+            width: 100%;
+        }
+    }
+    #user_info {
+        float: right;
+        margin-right: 10%;
+        line-height: 3;
+    }
+}
+
+
+.btn {
+    font-family: Gotham_book;
+}
+
+input {
+    font-family: Gotham_book;
+}
+
+.no-btn {
+    padding: 0!important;
+    border: none!important;
+}
+
+.modal-active {
+    overflow: hidden;
+}
+
+@import "./app/perm-validation/perm-validation.component.scss"

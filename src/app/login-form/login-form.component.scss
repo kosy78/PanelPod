@@ -1,0 +1,74 @@
+#login-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    overflow: hidden;
+    z-index: 99;
+    transition: all 300ms;
+    &.hidden {
+        transform: translateY(-100%);
+    }
+}
+
+
+.login-container {
+    padding: 2rem;
+    border-radius: .3rem;
+    width: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 521px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 3px #aaa;
+    text-align: center;
+    .alert-danger {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: red;
+    }
+
+    input[type=text],
+    input[type=password] {
+        width: 80%;
+    }
+}
+
+#login-brand {
+    text-align: center;
+    .logo {
+        width: 50%;
+        img {
+            width: 100%;
+            position: relative;
+            right: -50%;
+        }
+    }
+}
+
+
+.btn {
+    width: 80%;
+    &.error {
+        color: red;
+        border-color: red;
+        padding: 1rem;
+    }
+}
+
+
+.waves {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%!important;
+    img {
+        width: 100%;
+    }
+}
+
+@import "../perm-validation/perm-validation.component.scss"

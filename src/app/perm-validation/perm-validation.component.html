@@ -1,0 +1,176 @@
+<div id="form-container">
+    <form [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm)">
+        <div class="form-header">
+            <div class="column">
+                <div class="form-group">
+                    <label class="label-icon"><img src="../assets/img/Vector-Smart-Object.png"></label>
+                    <input class="form-control" type="text" placeholder="Profile name e.g. PM" [formControl]="complexForm.controls['profile_name']">
+                </div>
+                <div class="form-group">
+                    <label class="label-icon"><img src="../assets/img/icon2.png"></label>
+                    <select #t (change)="callType(t.value)" class="form-control">
+                        <option [disabled]="true" [selected]="true">Select people</option>
+                        <option *ngFor="let a of people" [value]="a">{{a}} </option>
+                    </select>
+                    <div id="selected_people" #selected_people>
+                    </div>
+                </div>
+            </div>
+            <div class="checkbox-inline">
+                <input id="c1" type="checkbox" [value]="option" [name]="option" [formControl]="complexForm.controls['admin']" />
+                <label for="c1">
+                    <span></span> Admin
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <h3>Submission flow</h3>
+            <div class="columns-wrapper">
+                <div class="column">
+                    <h4>Submission</h4>
+                    <span *ngFor="let option of optionsArray">
+        <label  class="checkbox-inline">
+          <input type="checkbox" [value]="option" [name]="option" [formControl]="complexForm.controls.submission_flow.controls.submission.controls[option]"> {{option}}
+        </label>
+        </span>
+                </div>
+                <div class="column">
+                    <h4>Assign priority</h4>
+                    <span *ngFor="let option of optionsArray">
+        <label  class="checkbox-inline">
+          <input type="checkbox" [value]="option" [name]="option" [formControl]="complexForm.controls.submission_flow.controls.assign_priority.controls[option]"> {{option}}
+        </label>
+        </span>
+                </div>
+                <div class="column">
+                    <h4>AQ status</h4>
+                    <span *ngFor="let option of optionsArray">
+        <label  class="checkbox-inline">
+          <input type="checkbox" [value]="option" [name]="option" [formControl]="complexForm.controls.submission_flow.controls.qa_status.controls[option]"> {{option}}
+        </label>
+        </span>
+                </div>
+                <div class="column">
+                    <h4>NMI</h4>
+                    <span *ngFor="let option of optionsArray">
+        <label  class="checkbox-inline">
+          <input type="checkbox" [value]="option" [name]="option" [formControl]="complexForm.controls.submission_flow.controls.nmi.controls[option]"> {{option}}
+        </label>
+        </span>
+                </div>
+                <div class="column">
+                    <h4>Pm review status</h4>
+                    <span *ngFor="let option of optionsArray">
+        <label  class="checkbox-inline">
+          <input type="checkbox" [value]="option" [name]="option" [formControl]="complexForm.controls.submission_flow.controls.pm_review_status.controls[option]"> {{option}}
+        </label>
+        </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h3>incident</h3>
+            <div class="column">
+                <h4>incident</h4>
+                <span *ngFor="let option of optionsArray">
+        <label  class="checkbox-inline">
+          <input type="checkbox" [value]="option" [name]="option" [formControl]="complexForm.controls.incident.controls.incident.controls[option]"> {{option}}
+        </label>
+        </span>
+            </div>
+            <div class="column">
+                <h4>Assign priority</h4>
+                <span *ngFor="let option of optionsArray">
+        <label  class="checkbox-inline">
+          <input type="checkbox" [value]="option" [name]="option" [formControl]="complexForm.controls.incident.controls.assign_priority.controls[option]"> {{option}}
+        </label>
+        </span>
+            </div>
+            <div class="column">
+                <h4>AQ status</h4>
+                <span *ngFor="let option of optionsArray">
+        <label  class="checkbox-inline">
+          <input type="checkbox" [value]="option" [name]="option" [formControl]="complexForm.controls.incident.controls.urgent_task.controls[option]"> {{option}}
+        </label>
+        </span>
+            </div>
+            <div class="column">
+                <h4>NMI</h4>
+                <span *ngFor="let option of optionsArray">
+        <label  class="checkbox-inline">
+          <input type="checkbox" [value]="option" [name]="option" [formControl]="complexForm.controls.incident.controls.qa_status.controls[option]"> {{option}}
+        </label>
+        </span>
+            </div>
+            <div class="column">
+                <h4>Pm review status</h4>
+                <span *ngFor="let option of optionsArray">
+        <label  class="checkbox-inline">
+          <input type="checkbox" [value]="option" [name]="option" [formControl]="complexForm.controls.incident.controls.nmi.controls[option]"> {{option}}
+        </label>
+        </span>
+            </div>
+            <div class="column">
+                <h4>Pm review status</h4>
+                <span *ngFor="let option of optionsArray">
+        <label  class="checkbox-inline">
+          <input type="checkbox" [value]="option" [name]="option" [formControl]="complexForm.controls.incident.controls.pm_review_status.controls[option]"> {{option}}
+        </label>
+        </span>
+            </div>
+        </div>
+        <div class="row">
+            <h3>Post lunch flow</h3>
+            <div class="column">
+                <h4>Assign priority</h4>
+                <span *ngFor="let option of optionsArray">
+        <label  class="checkbox-inline">
+          <input type="checkbox" [value]="option" [name]="option" [formControl]="complexForm.controls.post_lunch_flow.controls.assign_priority.controls[option]"> {{option}}
+        </label>
+        </span>
+            </div>
+            <div class="column">
+                <h4>QA review status</h4>
+                <span *ngFor="let option of optionsArray">
+        <label  class="checkbox-inline">
+          <input type="checkbox" [value]="option" [name]="option" [formControl]="complexForm.controls.post_lunch_flow.controls.qa_review_status.controls[option]"> {{option}}
+        </label>
+        </span>
+            </div>
+            <div class="column">
+                <h4>Manager validation</h4>
+                <span *ngFor="let option of optionsArray">
+        <label  class="checkbox-inline">
+          <input type="checkbox" [value]="option" [name]="option" [formControl]="complexForm.controls.post_lunch_flow.controls.manager_validation.controls[option]"> {{option}}
+        </label>
+        </span>
+            </div>
+            <div class="column">
+                <h4>Additional post lunch review</h4>
+                <span *ngFor="let option of optionsArray">
+        <label  class="checkbox-inline">
+          <input type="checkbox" [value]="option" [name]="option" [formControl]="complexForm.controls.post_lunch_flow.controls.additional_post_lunch_review.controls[option]"> {{option}}
+        </label>
+        </span>
+            </div>
+        </div>
+        <div class="button_wrapper">
+            <button id="perm_submit" type="submit" class="btn">Submit</button>
+        </div>
+    </form>
+    <div class="rights">
+        <p>All rights reserverved © 2017 </p>
+    </div>
+    <div class="waves"><img src="/assets/img/waves3.png"></div>
+</div>
+<div class="modal">
+</div>
+<div id="modal-container">
+    <div class="modal-background">
+        <div class="modal">
+            <div #form_container>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="animation" class="button">modal trigger</div>

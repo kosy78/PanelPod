@@ -1,0 +1,25 @@
+<div id="login-page">
+    <div class="login-container">
+        <div id="login-brand">
+            <div class="logo">
+                <img src="../assets/img/logo12.png" />
+            </div>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm.value)">
+            <div class="form-group" [ngClass]="{'has-error':!loginForm.controls['email'].valid && loginForm.controls['email'].touched}">
+                <label class="label-icon"><img src="../assets/img/Vector-Smart-Object.png"></label>
+                <input class="form-control" type="text" placeholder="john.smith" [formControl]="loginForm.controls['email']">
+                <div *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched" class="alert alert-danger">You must add an email.</div>
+            </div>
+            <div class="form-group" [ngClass]="{'has-error':!loginForm.controls['password'].valid && loginForm.controls['password'].touched}">
+                <label class="label-icon"><img src="../assets/img/icon3.png"></label>
+                <input class="form-control" type="password" placeholder="•••••" [formControl]="loginForm.controls['password']">
+                <div *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched" class="alert alert-danger">You must add a password.</div>
+            </div>
+            <div class="form-group">
+                <button id="login_submit" type="submit" class="btn"> Submit</button>
+            </div>
+        </form>
+        <div class="waves"><img src="/assets/img/waves1.png"></div>
+    </div>
+</div>
