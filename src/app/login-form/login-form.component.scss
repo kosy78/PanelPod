@@ -1,3 +1,6 @@
+$screen-sm-min: 768px;
+$screen-xs-max: ($screen-sm-min - 1);
+
 #login-page {
     position: fixed;
     top: 0;
@@ -22,6 +25,9 @@
     top: 50%;
     left: 50%;
     height: 521px;
+    @media (max-width: $screen-xs-max) {
+      width: 242px;
+    }
     transform: translate(-50%, -50%);
     box-shadow: 0 0 3px #aaa;
     text-align: center;
@@ -53,6 +59,9 @@
 
 .btn {
     width: 80%;
+    @media (max-width: $screen-xs-max) {
+      min-width: 242px!important;
+    }
     &.error {
         color: red;
         border-color: red;
